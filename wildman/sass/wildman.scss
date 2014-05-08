@@ -1,0 +1,61 @@
+@import "bourbon", "neat";
+
+
+/******************************
+SASS Variables
+******************************/
+$padding: 1em;
+
+
+.padding {
+	padding: 1em;
+}
+
+.white-text {
+	color: white;
+}
+
+
+
+header {
+	@include outer-container;
+	background-color: #298ec3;
+
+	a {
+		color: white;
+	}
+
+	a:hover {
+		color: lightgrey;
+	}
+	
+}
+
+section {
+	@include outer-container;
+	background-color: #d5eefb;
+}
+
+
+section {
+	max-width: 64em;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-bottom: 3em;
+
+}
+
+article {
+	@include span-columns(4);
+	background-color: #aadbf5;
+	padding: $padding;
+
+}
+
+nav {
+	li {
+		display: inline-block;
+		padding: 0 20px 0 0;
+	}
+}
