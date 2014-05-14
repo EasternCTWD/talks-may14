@@ -1,0 +1,76 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/******************************
+SASS Variables
+******************************/
+.padding {
+  padding: 1em; }
+
+.white-text {
+  color: white; }
+
+header {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #298ec3; }
+  header:after {
+    content: "";
+    display: table;
+    clear: both; }
+  header a {
+    color: white; }
+  header a:hover {
+    color: lightgrey; }
+
+section {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #d5eefb; }
+  section:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+article {
+  float: left;
+  display: block;
+  margin-right: 2.5641%;
+  width: 38.46154%;
+  background-color: #aadbf5;
+  padding: 1em; }
+  article:last-child {
+    margin-right: 0; }
+  @media screen and (max-width: 480px) {
+    article {
+      float: left;
+      display: block;
+      margin-right: 6.66667%;
+      width: 46.66667%; }
+      article:last-child {
+        margin-right: 0; } }
+
+nav li {
+  display: inline-block;
+  padding: 0 20px 0 0; }
+
+@media screen and (max-width: 480px) {
+  div {
+    float: left;
+    display: block;
+    margin-right: 6.66667%;
+    width: 100%; }
+    div:last-child {
+      margin-right: 0; } }
+@media screen and (max-width: 1280) {
+  div {
+    float: left;
+    display: block;
+    margin-right: 2.12766%;
+    width: 100%; }
+    div:last-child {
+      margin-right: 0; } }
