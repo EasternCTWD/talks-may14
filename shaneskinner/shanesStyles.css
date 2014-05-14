@@ -1,0 +1,49 @@
+/*
+	CSS Stylesheet for:  Shane's Lightening Talk for ECTWD Meetup
+    File Name:           shanesStyles.css
+	Author:		         Shane Skinner
+	Date Created:        05-13-2014
+	Last Updated:        05-13-2013
+*/
+
+/*********** Heading Styles **********/
+
+header {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	width: 80%;
+}
+
+nav {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+nav a {
+	margin-left: 30px;
+}
+
+
+/*********** Body Styles **********/
+
+body {
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+
+li {
+	list-style-type: none;
+}
+
+
+
+/*********** Footer Styles **********/
+
+footer {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	width: 80%;
+}
