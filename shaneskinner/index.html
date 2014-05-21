@@ -3,27 +3,20 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="Introduction to AngularJS">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Introduction to AngularJS">
 	
     <link rel="stylesheet" type="text/css" href="../css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="../css/main.css" />
     <link rel="stylesheet" type="text/css" href="shanesStyles.css" />
 
-	<script src="bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="js/plugins.js"></script>
-	<script src="js/main.js"></script>
-
     <title>Shane's Page</title>
 </head>
 
 <body>
-    <section class="container">
-    	<header>
-    		<div class="row"><h1>ECTWdWd: Lightning Talks...</h1></div>
-
+    <header>
+    	<div class="row"><h1>ECTWdWd: Lightning Talks...</h1></div>
     		<div class="row">
     			<nav>
     				<a href="../jaym/index.html">Jay Morgan</a>
@@ -31,13 +24,13 @@
     				<a href="../niosi/index.html">Jude Niosi</a>
     			</nav>
     		</div>
+        <div class="row">
+            <h2>Introduction to <em>AngularJS</em> by: <a href="http://www.shaneskinner.com" alt="www.shaneskinner.com">
+                Shane Skinner</a></h2>
+        </div>
+    </header>
 
-            <div class="row">
-                <h2>Introduction to <em>AngularJS</em> by: <a href="www.shaneskinner.com" alt="www.shaneskinner.com">
-                    Shane Skinner</a></h2>
-            </div>
-    	</header>
-
+    <section class="container">
         <article>
         	<h2>What is AngularJS?</h2>
     	    <h3>Short Version:</h3>
@@ -59,23 +52,67 @@
                 </blockquote>
         </article>
 
-        <article>
-        	<h2>Some Good Resources to learn more about AngularJS:</h2>
+        <section class="examples" ng-app="myApp">
+            <h2>Examples of AngularJS</h2>
+            <article ng-controller="FirstCtrl">
+                <h3>Text populated from my app</h3>
+                <h1>{{data.message}}</h1>
+                <input type="text" ng-model="data.message" />
+            </article>
+
+            <article ng-controller="SecondCtrl">
+                <h3>Reverse Text from a function in my app</h3>
+                <h1>{{data.message|reverse}}</h1>
+                <input type="text" ng-model="data.message" />
+            </article>
+        </section>
+
+        <section ng-app="SeahawksApp" class="seahawks clear">
+            <article ng-controller="SeahawksCtrl">
+                <h1>Seattle Seahawks</h1>
+                <h1>Coach: {{Coach}}</h1>
+                <input type="text" ng-model="searchText">
+                <table>
+                    <tr ng-repeat="player in seahawks.roster | orderBy: 'name' | filter:searchText">
+                        <td>{{player.name}}</td>
+                        <td>{{player.position}}</td>
+                    </tr>
+                </table>
+            </article>
+
+            <article ng-app="RichardSherman">
+                <h3>Richard Sherman says:</h3>
+                <rant></rant>
+            </article>
+        </section>
+    </section>
+
+    <footer>
+        <h3>Thank you for participating!</h3>
+        <div>
+            <h4>Some Good Resources to learn more about AngularJS:</h4>
                 <ul>
-                    <li><a href="http://angularjs.org/" alt="www.angularjs.org/">Website</a></li>
+                    <li><a href="http://angularjs.org/" alt="www.angularjs.org/">AngularJS.org</a></li>
                     <li><a href="http://github.com/angular/angular.js" alt="www.github.com/angular/angular.js">
                            AngularJS on Github</a></li>
                     <li><a href="http://docs.angularjs.org/guide" alt="www.docs.angularjs.org/guide">Developer Guide</a>
                            </li>
-                    <li><a href="" alt=""></a></li>
-                    <li><a href="" alt=""></a></li>
+                    <li><a href="http://egghead.io/articles/new-to-angularjs-start-learning-here" 
+                           alt="Thanks for suggesting www.egghead.io, Jay!">Learn on Egghead.io</a></li>
+                    <li><a href="http://teamtreehouse.com/library/building-with-angularjs-and-apis" 
+                           alt="Learn on Treehouse.com">Learn on Treehouse.com</a></li>
                     <li><a href="" alt=""></a></li>
                 </ul>
-        </article>
-    </section>
-
-    <footer>
-        <p>Thank you for participating!</p>
+        </div>
     </footer>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.8/angular.min.js">
+    </script>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="SeahawksApp.js"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
