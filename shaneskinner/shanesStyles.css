@@ -3,7 +3,7 @@
     File Name:           shanesStyles.css
 	Author:		         Shane Skinner
 	Date Created:        05-13-2014
-	Last Updated:        05-13-2013
+	Last Updated:        05-20-2013
 */
 
 /*********** Heading Styles **********/
@@ -16,28 +16,65 @@ header {
 }
 
 nav {
+	
+	font-size: 1.25em;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 nav a {
+	color: white;
 	margin-left: 30px;
+}
+
+div a {
+	color: white;
 }
 
 
 /*********** Body Styles **********/
 
 body {
+	background-color: #789;
 	margin-left: auto;
 	margin-right: auto;
-	width: 80%;
+	width: 100%;
+}
+
+section {
+	background-color: white;
+}
+
+h2 {
+	color: navy;
+	text-align: center;
 }
 
 li {
 	list-style-type: none;
 }
 
+input {
+	width: 300px;
+}
 
+.clear {
+	clear: both;
+}
+
+.examples article {
+	float: left;
+	margin-bottom: 50px;
+	margin-left: 150px;
+}
+
+.seahawks {
+	background-color: skyblue;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	width: 80%;
+}
 
 /*********** Footer Styles **********/
 
