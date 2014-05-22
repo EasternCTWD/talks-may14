@@ -21,7 +21,7 @@
     			<nav>
     				<a href="jaym/index.html">Jay Morgan</a>
     				<a href="wildman/index.html">Matt Wildman</a>
-    				<a href="shaneskinner/index.html">Shane Skinner</a>
+    				<a href="index.html">Shane Skinner</a>
     			</nav>
     		</div>
         <div class="row">
@@ -33,19 +33,26 @@
      <section ng-app="SeahawksApp" class="seahawks clear">
             <article ng-controller="SeahawksCtrl">
                 <h1>Seattle Seahawks</h1>
-                <h1>Coach: {{Coach}}</h1>
+                <h3>Coach: {{coach}}</h3>
                 <input type="text" ng-model="searchText">
+                <br /><br />
                 <table>
+                    <tr>
+                        <td class="bold">Player:</td>
+                        <td class="bold">Position:</td>
+                    </tr>
                     <tr ng-repeat="player in seahawks | orderBy: 'name' | filter:searchText">
+
                         <td>{{player.name}}</td>
                         <td>{{player.position}}</td>
                     </tr>
                 </table>
             </article>
 
-            <article ng-app="RichardSherman">
+            <article>
                 <h3>Richard Sherman says:</h3>
-                <rant></rant>
+                <h4><rant></rant></h4>
+                <br />
             </article>
         </section>
     </section>
