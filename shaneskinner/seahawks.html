@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Introduction to AngularJS">
+	
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="shanesStyles.css" />
+
+    <title>Go Seahawks!</title>
+</head>
+
+<body>
+    <header>
+    	<div class="row"><h1>ECTWdWd: Lightning Talks...</h1></div>
+    		<div class="row">
+    			<nav>
+    				<a href="jaym/index.html">Jay Morgan</a>
+    				<a href="wildman/index.html">Matt Wildman</a>
+    				<a href="index.html">Shane Skinner</a>
+    			</nav>
+    		</div>
+        <div class="row">
+            <h2>More about <em>AngularJS</em> by: <a href="http://www.shaneskinner.com" alt="www.shaneskinner.com">
+                Shane Skinner</a></h2>
+        </div>
+    </header>
+
+     <section ng-app="SeahawksApp" class="seahawks clear">
+            <article ng-controller="SeahawksCtrl">
+                <h1>Seattle Seahawks</h1>
+                <h3>Coach: {{coach}}</h3>
+                <input type="text" ng-model="searchText">
+                <br /><br />
+                <table>
+                    <tr>
+                        <td class="bold">Player:</td>
+                        <td class="bold">Position:</td>
+                    </tr>
+                    <tr ng-repeat="player in seahawks | orderBy: 'name' | filter:searchText">
+
+                        <td>{{player.name}}</td>
+                        <td>{{player.position}}</td>
+                    </tr>
+                </table>
+            </article>
+
+            <article>
+                <h3>Richard Sherman says:</h3>
+                <h4><rant></rant></h4>
+                <br />
+            </article>
+        </section>
+    </section>
+
+    <footer>
+        <h3>Thank you for participating!</h3>
+        <div>
+            <h4>Some Good Resources to learn more about AngularJS:</h4>
+                <ul>
+                    <li><a href="http://angularjs.org/" alt="www.angularjs.org/">AngularJS.org</a></li>
+                    <li><a href="http://github.com/angular/angular.js" alt="www.github.com/angular/angular.js">
+                           AngularJS on Github</a></li>
+                    <li><a href="http://docs.angularjs.org/guide" alt="www.docs.angularjs.org/guide">Developer Guide</a>
+                           </li>
+                    <li><a href="http://egghead.io/articles/new-to-angularjs-start-learning-here" 
+                           alt="Thanks for suggesting www.egghead.io, Jay!">Learn on Egghead.io</a></li>
+                    <li><a href="http://teamtreehouse.com/library/building-with-angularjs-and-apis" 
+                           alt="Learn on Treehouse.com">Learn on Treehouse.com</a></li>
+                    <li><a href="" alt=""></a></li>
+                </ul>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.8/angular.min.js">
+    </script>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="SeahawksApp.js"></script>
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/plugins.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+</body>
+</html>
