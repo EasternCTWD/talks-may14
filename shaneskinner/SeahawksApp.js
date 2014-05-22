@@ -1,10 +1,11 @@
+
 var SeahawksApp = angular.module('SeahawksApp', []);
 
-SeahawksApp.factory('Seahawks', function () {
-	var Seahawks = {};
+SeahawksApp.factory('Team', function () {
+	var team = {};
 	var Coach = "Pete Carroll";
 
-	Seahawks.roster = [
+	team.roster = [
 	{
 	   name: "Russell Wilson",
 	   position: "Quarterback"
@@ -39,18 +40,24 @@ SeahawksApp.factory('Seahawks', function () {
 	}
     ];
 
-	return Seahawks;
+	return team;
 })
-
-function SeahawksCtrl($scope, Seahawks) {
-	$scope.Seahawks = Seahawks;
-}
-
-var app = angular.module("RichardSherman", [])
-
-app.directive("rant", function() {
+.controller('SeahawksCtrl',function ($scope, Team) {
+	$scope.seahawks = Team.roster;
+})
+.directive('rant', function () {
 	return {
-		restrict: "E",
-		template: "<div>Don't you ever talk about me! I'm the best Cornerback in the league!</div>"
+		restrict: 'E',
+		replace: true,
+		template: "<div>blah blah!!!!</div>"
 	}
-})
+});
+
+// var app = angular.module("RichardSherman", [])
+//
+// app.directive("rant", function() {
+// 	return {
+// 		restrict: "E",
+// 		template: "<div>Don't you ever talk about me! I'm the best Cornerback in the league!</div>"
+// 	}
+// })
