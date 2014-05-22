@@ -32,8 +32,9 @@
 
      <section ng-app="SeahawksApp" class="seahawks clear">
             <article ng-controller="SeahawksCtrl">
+                <br />
                 <h1>Seattle Seahawks</h1>
-                <h3>Coach: {{coach}}</h3>
+                <h3>Coach: <!-- {{coach}} --> </h3>
                 <input type="text" ng-model="searchText">
                 <br /><br />
                 <table>
@@ -41,17 +42,18 @@
                         <td class="bold">Player:</td>
                         <td class="bold">Position:</td>
                     </tr>
-                    <tr ng-repeat="player in seahawks | orderBy: 'name' | filter:searchText">
+                    <tr ng-repeat="player in seahawks | orderBy: 'position' | filter:searchText">
 
-                        <td>{{player.name}}</td>
-                        <td>{{player.position}}</td>
+                        <td><!-- {{player.name}} --></td>
+                        <td><!-- {{player.position}} --></td>
                     </tr>
                 </table>
             </article>
 
             <article>
+                <br />
                 <h3>Richard Sherman says:</h3>
-                <h4><rant></rant></h4>
+                <!-- <h4><rant></rant></h4> -->
                 <br />
             </article>
         </section>

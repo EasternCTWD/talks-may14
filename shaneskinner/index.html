@@ -62,16 +62,17 @@
                 <h1>{{data.message}}</h1>
                 <input type="text" ng-model="data.message" />
             </article>
-
+<!--
             <article ng-controller="SecondCtrl">
                 <h3>Reverse Text from a function in my app</h3>
                 <h1>{{data.message|reverse}}</h1>
                 <input type="text" ng-model="data.message" />
             </article>
-
+-->
             <article>
                 <p>You can make an HTML element an app by adding the <code>ng-app</code> attribute.</p>
-                <p>To control a specific app, you would add the name of the app such as <code>ng-app="myApp"</code>.</p>
+                <p>To signify which app you want to access, you would add the name of the app such as <code>ng-app="myApp"</code>.</p>
+                <p>To control your app, you simply create a controller in the .js file and add the controller to the element using <code>ng-controller.</code></p>
                 <aside><p>An app can be coded in just a few lines such as this:</p>
                     <pre><code>
                         var myApp = angular.module('myApp', []);
@@ -79,27 +80,14 @@
                                 return {message: ""}
                             })
 
-                        myApp.filter('reverse', function() {
-                            return function(text) {
-                                return text.split("").reverse().join("");
-                            }
-                        })
-
                         function FirstCtrl($scope, Data) {
                             $scope.data = Data;
-                        }
-
-                        function SecondCtrl($scope, Data) {
-                            $scope.data = Data;
-                            $scope.reversedMessage = function(message) {
-                                return message.split("").reverse().join("");
-                            }
                         }
                     </code></pre>
                 </aside>
                 <br />
                 <p>One of the most useful features of AngularJS is the <code>ng-repeat</code> feature.</p>
-                <p>It provides a way to repeat through data quickly and easily!</p>
+                <p>It provides a way to repeat through data quickly and easily! I'll show you an example on the next page.</p>
                 <br />
                 <h4>Let's learn more about AngularJS from the Super Bowl Champion <a href="seahawks.html" 
                     alt="seahawks.html">Seattle Seahawks!</a></h4>
