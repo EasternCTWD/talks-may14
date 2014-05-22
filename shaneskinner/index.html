@@ -100,16 +100,18 @@
                 <br />
                 <p>One of the most useful features of AngularJS is the <code>ng-repeat</code> feature.</p>
                 <p>It provides a way to repeat through data quickly and easily!</p>
+                <br />
+                <p>Let's take a look at the <a href="seahawks.html" alt="seahawks.html">Seahawks!</a></p>
             </article>
         </section>
-
+<!--
         <section ng-app="SeahawksApp" class="seahawks clear">
             <article ng-controller="SeahawksCtrl">
                 <h1>Seattle Seahawks</h1>
                 <h1>Coach: {{Coach}}</h1>
                 <input type="text" ng-model="searchText">
                 <table>
-                    <tr ng-repeat="player in seahawks.roster | orderBy: 'name' | filter:searchText">
+                    <tr ng-repeat="player in Seahawks.roster | orderBy: 'name' | filter:searchText">
                         <td>{{player.name}}</td>
                         <td>{{player.position}}</td>
                     </tr>
@@ -122,7 +124,7 @@
             </article>
         </section>
     </section>
-
+-->
     <footer>
         <h3>Thank you for participating!</h3>
         <div>
@@ -146,9 +148,9 @@
     </script>
     <script type="text/javascript" src="main.js"></script>
     <script type="text/javascript" src="SeahawksApp.js"></script>
-    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/plugins.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/plugins.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
 </body>
 </html>

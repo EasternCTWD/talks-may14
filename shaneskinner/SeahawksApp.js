@@ -2,7 +2,7 @@ var SeahawksApp = angular.module('SeahawksApp', []);
 
 SeahawksApp.factory('Seahawks', function () {
 	var Seahawks = {};
-	var Coach = "Pete Carroll";
+	$scope.Coach = "Pete Carroll";
 
 	Seahawks.roster = [
 	{
@@ -43,7 +43,7 @@ SeahawksApp.factory('Seahawks', function () {
 })
 
 function SeahawksCtrl($scope, Seahawks) {
-	$scope.Seahawks = Seahawks;
+	$scope.seahawks = Seahawks.roster;
 }
 
 var app = angular.module("RichardSherman", [])
