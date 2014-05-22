@@ -2,7 +2,8 @@ var SeahawksApp = angular.module('SeahawksApp', []);
 
 SeahawksApp.factory('TeamFactory', function () {
 	var team = {};
-	var coach = "Pete Carroll";
+
+	team.coach = "Pete Carroll";
 
 	team.roster = [
 	{
