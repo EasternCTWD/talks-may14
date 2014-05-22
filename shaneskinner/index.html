@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Introduction to AngularJS">
+
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="shanesStyles.css" />
+
+    <title>Shane's Page</title>
+</head>
+
+<body>
+    <header>
+    	<div class="row"><h1>ECTWdWd: Lightning Talks...</h1></div>
+    		<div class="row">
+    			<nav>
+    				<a href="../jaym/index.html">Jay Morgan</a>
+    				<a href="../wildman/index.html">Matt Wildman</a>
+    				<a href="../niosi/index.html">Jude Niosi</a>
+    			</nav>
+    		</div>
+        <div class="row">
+            <h2>Introduction to <em>AngularJS</em> by: <a href="http://www.shaneskinner.com" alt="www.shaneskinner.com">
+                Shane Skinner</a></h2>
+        </div>
+    </header>
+
+    <section class="container">
+        <article>
+        	<h2>What is AngularJS?</h2>
+    	    <h3>Short Version:</h3>
+                <blockquote>AngularJS is HTML enchanced for web apps.</blockquote>
+            <h3>Detailed Version:</h3>
+                <blockquote><p>AngularJS is a structural framework for dynamic web apps. It lets you use HTML as your
+                               template language and lets you extend HTML's syntax to express your application's components clearly and succinctly. Angular's data binding and dependency injection eliminate much of the code you currently have to write. And it all happens within the browser, making it an ideal partner with any server technology.<p>
+                            <p>Angular is what HTML would have been had it been designed for applications. HTML is a
+                               great declarative language for static documents. It does not contain much in the way of creating applications, and as a result building web applications is an exercise in what do I have to do to trick the browser into doing what I want?</p>
+                            <cite><a href="http://docs.angularjs.org/guide/introduction"
+                                     alt="www.docs.angularjs.org/guide/introduction">
+                                     http://docs.angularjs.org/guide/introduction</a></cite>
+                </blockquote>
+
+    	    <h2>Why should I learn AngularJS?</h2>
+            <h3>Short Version:</h3>
+                <blockquote>Because it rocks!</blockquote>
+            <h3>Detailed Version:</h3>
+    	        <blockquote cite="https://angularjs.org/"><p>HTML is great for declaring static documents, but it falters
+                            when we try to use it for declaring dynamic views in web-applications. AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.</p>
+                    <cite><a href="http://angularjs.org/" alt="www.angularjs.org">www.angularjs.org/</a></cite>
+                </blockquote>
+        </article>
+
+        <section class="examples" ng-app="myApp">
+            <h2>Examples of AngularJS</h2>
+            <article ng-controller="FirstCtrl">
+                <h3>Text populated from my app</h3>
+                <h1>{{data.message}}</h1>
+                <input type="text" ng-model="data.message" />
+            </article>
+<!--
+            <article ng-controller="SecondCtrl">
+                <h3>Reverse Text from a function in my app</h3>
+                <h1>{{data.message|reverse}}</h1>
+                <input type="text" ng-model="data.message" />
+            </article>
+-->
+            <article>
+                <p>You can make an HTML element an app by adding the <code>ng-app</code> attribute.</p>
+                <p>To signify which app you want to access, you would add the name of the app such as <code>ng-app="myApp"</code>.</p>
+                <p>To control your app, you simply create a controller in the .js file and add the controller to the element using <code>ng-controller.</code></p>
+                <aside><p>An app can be coded in just a few lines such as this:</p>
+                    <pre><code>
+                        var myApp = angular.module('myApp', []);
+                            myApp.factory('Data', function() {
+                                return {message: ""}
+                            })
+
+                        function FirstCtrl($scope, Data) {
+                            $scope.data = Data;
+                        }
+                    </code></pre>
+                </aside>
+                <br />
+                <p>One of the most useful features of AngularJS is the <code>ng-repeat</code> feature.</p>
+                <p>It provides a way to repeat through data quickly and easily! I'll show you an example on the next page.</p>
+                <br />
+                <h4>Let's learn more about AngularJS from the Super Bowl Champion <a href="seahawks.html"
+                    alt="seahawks.html">Seattle Seahawks!</a></h4>
+            </article>
+        </section>
+
+    <footer>
+        <h3>Thank you for participating!</h3>
+        <div>
+            <h4>Some Good Resources to learn more about AngularJS:</h4>
+                <ul>
+                    <li><a href="http://angularjs.org/" alt="www.angularjs.org/">AngularJS.org</a></li>
+                    <li><a href="http://github.com/angular/angular.js" alt="www.github.com/angular/angular.js">
+                           AngularJS on Github</a></li>
+                    <li><a href="http://docs.angularjs.org/guide" alt="www.docs.angularjs.org/guide">Developer Guide</a>
+                           </li>
+                    <li><a href="http://egghead.io/articles/new-to-angularjs-start-learning-here"
+                           alt="Thanks for suggesting www.egghead.io, Jay!">Learn on Egghead.io</a></li>
+                    <li><a href="http://teamtreehouse.com/library/building-with-angularjs-and-apis"
+                           alt="Learn on Treehouse.com">Learn on Treehouse.com</a></li>
+                </ul>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.8/angular.min.js">
+    </script>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="SeahawksApp.js"></script>
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/plugins.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+</body>
+</html>
