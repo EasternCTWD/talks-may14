@@ -46,6 +46,9 @@
                 </blockquote>
 
     	    <h2>Why should I learn AngularJS?</h2>
+            <h3>Short Version:</h3>
+                <blockquote>Because it rocks!</blockquote>
+            <h3>Detailed Version:</h3>
     	        <blockquote cite="https://angularjs.org/"><p>HTML is great for declaring static documents, but it falters 
                             when we try to use it for declaring dynamic views in web-applications. AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.</p>
                     <cite><a href="http://angularjs.org/" alt="www.angularjs.org">www.angularjs.org/</a></cite>
@@ -64,6 +67,39 @@
                 <h3>Reverse Text from a function in my app</h3>
                 <h1>{{data.message|reverse}}</h1>
                 <input type="text" ng-model="data.message" />
+            </article>
+
+            <article>
+                <p>You can make an HTML element an app by adding the <code>ng-app</code> attribute.</p>
+                <p>To control a specific app, you would add the name of the app such as <code>ng-app="myApp"</code>.</p>
+                <aside><p>An app can be coded in just a few lines such as this:</p>
+                    <pre><code>
+                        var myApp = angular.module('myApp', []);
+                            myApp.factory('Data', function() {
+                                return {message: ""}
+                            })
+
+                        myApp.filter('reverse', function() {
+                            return function(text) {
+                                return text.split("").reverse().join("");
+                            }
+                        })
+
+                        function FirstCtrl($scope, Data) {
+                            $scope.data = Data;
+                        }
+
+                        function SecondCtrl($scope, Data) {
+                            $scope.data = Data;
+                            $scope.reversedMessage = function(message) {
+                                return message.split("").reverse().join("");
+                            }
+                        }
+                    </code></pre>
+                </aside>
+                <br />
+                <p>One of the most useful features of AngularJS is the <code>ng-repeat</code> feature.</p>
+                <p>It provides a way to repeat through data quickly and easily!</p>
             </article>
         </section>
 
