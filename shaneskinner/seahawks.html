@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!--
+        Author: Shane Skinner
+        Purpose: To provide a brief introduction to AngularJS
+        Last Updated: 05-23-2014
+    -->
+
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,6 +27,7 @@
     			<nav>
     				<a href="jaym/index.html">Jay Morgan</a>
     				<a href="wildman/index.html">Matt Wildman</a>
+                    <a href="../niosi/index.html">Jude Niosi</a>
     				<a href="index.html">Shane Skinner</a>
     			</nav>
     		</div>
@@ -34,7 +41,8 @@
             <article ng-controller="SeahawksCtrl">
                 <br />
                 <h1>Seattle Seahawks</h1>
-                <h3>Coach: <!-- {{coach}} --> </h3>
+                <h3>Coach: {{coach}} </h3>
+                <p>Search for a players name or position</p>
                 <input type="text" ng-model="searchText">
                 <br /><br />
                 <table>
@@ -44,18 +52,38 @@
                     </tr>
                     <tr ng-repeat="player in seahawks | orderBy: 'position' | filter:searchText">
 
-                        <td><!-- {{player.name}} --></td>
-                        <td><!-- {{player.position}} --></td>
+                        <td>{{player.name}}</td>
+                        <td>{{player.position}}</td>
                     </tr>
                 </table>
             </article>
 
             <article>
                 <br />
+                <p>With AngularJS directives, you can create custom HTML elements. For example, I created a "rant" element like this:</p>
+                <pre>
+                    <code>
+SeahawksApp.directive('rant', function () {
+return {
+    restrict: 'E',
+    replace: true,
+    template: "< div>Don't you ever talk about me! I'm the best Cornerback in the league!< /div>"
+}
+});
+                    </code>
+                </pre>
+                <p>And then I inserted it into the HTML file by simply adding:</p>
+                <pre><code>
+                    < rant>< /rant> (Excluding the spaces)
+                </code></pre>
                 <h3>Richard Sherman says:</h3>
-                <!-- <h4><rant></rant></h4> -->
+                <h4><rant></rant></h4>
                 <br />
             </article>
+
+            <aside>
+                <p>For a better demo on Angular JS, <a href="https://www.youtube.com/watch?v=i9MHigUZKEM" alt="AngularJS Fundamentals in 60'ish Minutes">watch this video</a>. If you don't have an hour and 10 minutes to watch it all, fast-forward to the 1:03:15 mark and watch the last ~7 minutes to see a nice example of what AngularJS can do.</p>
+            </aside>
         </section>
     </section>
 
@@ -71,6 +99,8 @@
                            </li>
                     <li><a href="http://egghead.io/articles/new-to-angularjs-start-learning-here" 
                            alt="Thanks for suggesting www.egghead.io, Jay!">Learn on Egghead.io</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=i9MHigUZKEM" alt="AngularJS Fundamentals">Angular JS 
+                           Fundamentals in 60'ish Minutes</a></li>
                     <li><a href="http://teamtreehouse.com/library/building-with-angularjs-and-apis" 
                            alt="Learn on Treehouse.com">Learn on Treehouse.com</a></li>
                     <li><a href="" alt=""></a></li>
